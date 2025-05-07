@@ -1,1 +1,124 @@
-<h1>Website Development Assignment </h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Serenifit</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="brand">Serenifit</div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <nav id="mainNav">
+      <a href="#home">Home</a>
+      <a href="#about">About Us</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+      <a href="#book">Book Now</a>
+    </nav>
+  </header>
+
+  <section class="hero fade-in" id="home">
+    <div class="text-block">
+      <h2>Yoga for All</h2>
+      <p>At Serenifit, we believe yoga is for every body—regardless of age, experience, or flexibility. Our inclusive approach honors your unique journey, blending movement, breath, and awareness to create a sanctuary of calm in a fast-paced world. Whether you're a curious beginner or a seasoned practitioner, you'll find a nurturing space to grow, heal, and reconnect with your inner self.</p>
+      <a href="#services" class="btn"><i class="fas fa-cogs"></i> Explore Services</a>
+    </div>
+    <div class="hero-img">
+      <img src="yogapose2.jpg" alt="Yoga Pose" />
+    </div>
+  </section>
+
+  <section class="section fade-in" id="about">
+    <h3>Our Philosophy</h3>
+    <p>Serenifit embraces holistic wellbeing. We offer trauma-aware, growth-oriented yoga classes and programs, creating a compassionate wellness community. Our classes are designed to be gentle yet empowering, meeting you exactly where you are. We invite you to step onto the mat without judgment, with curiosity and compassion. Each breath becomes a step inward, each movement an opportunity to release, renew, and realign. Yoga for all isn't just our motto—it's our mission.</p>
+    <a href="#book" class="btn"><i class="fas fa-heart"></i> Join Us</a>
+  </section>
+
+  <section class="image-section fade-in">
+    <img src="yogastudio.jpg" alt="Yoga Studio" />
+  </section>
+
+  <section class="section fade-in" id="services">
+    <h3>Our Services</h3>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-users"></i>
+        </div>
+        <h4>Group Classes</h4>
+        <p>Join a community-focused group class designed to improve flexibility and mindfulness.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-user"></i>
+        </div>
+        <h4>One-on-One Sessions</h4>
+        <p>Receive personalized attention to achieve your fitness and wellness goals.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-spa"></i>
+        </div>
+        <h4>Mindfulness Retreats</h4>
+        <p>Escape the hustle and reconnect with your inner peace through immersive retreats.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-laptop"></i>
+        </div>
+        <h4>Online Programs</h4>
+        <p>Participate in remote sessions that bring serenity directly to your home.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section fade-in" id="contact">
+    <h3>Contact Us</h3>
+    <p><i class="fas fa-envelope"></i><a href="mailto:info@serenifit.com">info@serenifit.com</a></p>
+    <p><i class="fas fa-phone"></i><a href="tel:+919212560747">+91 9212560747</a></p>
+  </section>
+
+  <section class="book-section fade-in" id="book">
+    <h3>Book a Session</h3>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="4" placeholder="Your Message or Booking Request"></textarea>
+      <input type="submit" value="Send Booking" />
+    </form>
+  </section>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('mainNav').classList.toggle('active');
+    }
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    document.querySelectorAll('.fade-in').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+
+</body>
+</html>
+
+
+
+
+
